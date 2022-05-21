@@ -1,0 +1,411 @@
+/* ------------------------------ mid ------------------------------ */
+
+:root {
+    --darkgrey: #282e34;
+    --lightblue: #0d6efd;
+    --orange: rgb(231, 129, 12);
+    --green: rgb(97, 210, 27);
+}
+
+/* welcome */
+.welcome {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.inner-welcome {
+    height: 30%;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    color: white;
+    width: 100%;
+    /* background-color: var(--darkgrey); */
+}
+
+.welcome h1 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    padding-bottom: 5rem;
+    font-size: 4rem;
+}
+
+.welcome a {
+    letter-spacing: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 2em;
+    text-decoration: none;
+    /* background-color: var(--lightblue); */
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    margin-top: 1rem;
+    padding: 1em 1em;
+    /* border: 3px solid var(--lightblue); */
+    border: 3px solid black;;
+    border-radius: 30px;
+}
+
+.welcome a:hover {
+    color: white;
+    background: none;
+    border: 3px solid white;
+    transition: 0.3s;
+}
+
+@media(max-width:1000px) {
+    .welcome h1 {
+        font-size: 2.5rem;
+        padding: 0 1em;
+    }
+
+    .welcome a {
+        height: 70%;
+        width: 70%;
+    }
+}
+
+/* article */
+.animals {
+    background-color: white;
+}
+
+.list-group {
+    width: 40%;
+    margin: 0 auto;
+    z-index: 5;
+}
+
+.arxikh-article {
+
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.5;
+    color: #666;
+}
+
+.arxikh-article p {
+    width: 70%;
+    margin: 0 auto;
+    padding-bottom: 1em;
+}
+
+.arxikh-article h2 {
+    margin: 0;
+    padding: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.images {
+    height: 100%;
+    position: relative;
+    opacity: 1;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.img1 {
+    background-image: url("../images/panta.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.img2 {
+    background-image: url("../images/goat.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.img3 {
+    background-image: url("../images/aquarium2.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.img4 {
+    background-image: url("../images/elf.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.section {
+    text-align: center;
+    padding: 0.5em 2em;
+    background-color: var(--darkgrey);
+    color: #ddd;
+}
+
+#par-1 {
+    background-color: var(--darkgrey);
+}
+
+#par-2 {
+    background-color: rgb(255, 196, 0);
+}
+
+#parag-3 {
+    margin-top: 20px;
+    background-color: var(--green);
+}
+
+#parag-4 {
+    background-color: crimson;
+}
+
+
+.section p::before {
+    content: "✓";
+    padding-right: 0.4em;
+    padding-left: 0;
+}
+
+.section .column:hover svg {
+    animation: rotation 1s 1 ease-in-out;
+}
+
+.section .column i {
+    font-size: 1.3em;
+}
+
+.section .column:hover i {
+    animation: rotation 1s 1 ease-in-out;
+}
+
+.section .parag {
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section .head {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.section ul {
+    list-style: none;
+}
+
+.imgtext {
+    /* background-color: var(--darkgrey); */
+    color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.img-border {
+    background-color: transparent;
+    color: white;
+    padding: 0.5em;
+}
+
+.img-border.title {
+    text-align: center;
+    background-color: #111;
+}
+
+@media(max-width:900px) {
+    .animals-article {
+        font-size: 1.2em;
+    }
+
+    .welcome a {
+        width: 70%;
+        height: 70%;
+        font-size: 1.3em;
+    }
+}
+
+.section .head {
+    color: white;
+    padding-bottom: 1em;
+}
+
+.section #zwa {
+    color: white;
+}
+
+.section .parag {
+    padding: 0;
+    margin: 0;
+    gap: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.section .parag-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    /* background-color: white;
+    color: #282e34;
+    box-shadow: 5px 5px 0 rgb(0, 0, 0,0.5); */
+}
+
+.section .parag-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.section .parag-3 {
+    overflow-x: hidden;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.section .parag-4 {
+    overflow-x: hidden;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+
+.section .parag-3 img{
+    width: 300px;
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 15px;
+    
+}
+
+
+@media(max-width:900px) {
+    .section .parag {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+    .section iframe {
+        padding-bottom: 1em;
+    }
+
+    .section .parag-2 {
+        flex-direction: column;
+    }
+
+    .section .parag-3 {
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+    }
+    .section .parag-4 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+
+/* .section .parag-3 ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+} */
+
+.section .parag-2 a {
+    flex: 1;
+    gap: 40px
+}
+
+.section .parag h3 {
+    padding: 0.5em;
+}
+
+.section .parag h2 {
+    padding: 0.5em;
+}
+
+.section h3::before {
+    content: "✓";
+    padding-right: 0.4em;
+    padding-left: 0;
+}
+
+.section a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.section a:hover {
+    color: rgb(240, 95, 28);
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.section li {
+    padding: 0.2em 0;
+}
+
+.section ul #day {
+    color: green;
+}
+
+.section ul #sk {
+    color: red;
+}
+
+
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.svg-icon {
+    width: 1em;
+    height: 1em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+    fill: white;
+}
+
+.svg-icon circle {
+    stroke: white;
+    stroke-width: 1;
+}
+
+/* svg css */

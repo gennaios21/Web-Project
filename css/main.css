@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:wght@300;400;600;700&display=swap');
+
+:root {
+    font-size: 1em;
+    --darkgrey: #282e34;
+    --lightblue: #0d6efd;
+    --orange: rgb(231, 129, 12);
+    --green: rgb(97, 210, 27);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.main,
+.contact {
+    background-image: url("../images/fish.jpg");
+    background-repeat: no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+}
+
+/* -------- SCROLLBAR -------- */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ------------------------------ hmty logo - socials ------------------------------ */
+
+
+.outer-hmty {
+    background-color: white;
+}
+
+#hmty {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@media(max-width:500px) {
+    /* #hmty {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.8em 0;
+    } */
+
+    #hmty .logo {
+        display: none;
+        /* display: flex;
+        align-items: center;
+        height: 4em; */
+    }
+}
+
+#hmty a {
+    color: black;
+    text-decoration: none;
+    text-emphasis: none;
+}
+
+#hmty #logo {
+    height: 5em;
+}
+
+#hmty .socials {
+    height: 3em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+
+/* -------- ICON ANIMATION -------- */
+@keyframes rotation {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(359deg);
+    }
+}
+
+/* animation: rotation 1s 1 ease-in-out;              <---   Copy-paste σε selector (συνηθως με hover) */
+/* -------- END OF ICON ANIMATION -------- */
+
+#hmty .social_media {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+
+#hmty .bi-instagram:hover {
+    color: rgb(236, 16, 16);
+    transition-delay: 0ms;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation: rotation 1s 1 ease-in-out;
+}
+
+#hmty .bi-facebook:hover {
+    color: rgb(22, 82, 212);
+    transition-delay: 0ms;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation: rotation 1s 1 ease-in-out;
+}
+
+#hmty .lang {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+#hmty #gr,
+#hmty #uk {
+    height: 30px;
+
+}
+
+#hmty #uk {
+    border-left: 4px solid rgb(255, 81, 0);
+    padding-left: 10px;
+}
+
+/* ------------------------------ upper ------------------------------ */
+
+.upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    background-color: #0d6efd;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    /* opacity: 0.9; */
+}
+
+
+.upper .current {
+    color: rgb(0, 0, 0);
+}
+
+.upper ul {
+    max-width: 980px;
+    margin: 0 auto;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0.5em;
+
+}
+
+.upper .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 3em;
+}
+
+/* .upper .logo img{
+    height: 100%;
+} */
+
+.upper .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 3em;
+    /* visibility: hidden; */
+}
+
+.upper .login p {
+    margin: 0;
+}
+
+.upper .login i {
+    font-size: 1em;
+    padding-right: 10px;
+}
+
+.upper .login-a {
+    display: flex;
+    align-items: baseline;
+    color: red;
+    text-decoration: none;
+}
+
+.upper .login a:hover {
+    color: white;
+    transition-delay: 0ms;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* .upper .bi-box-arrow-in-right {
+    margin-right: 6px;
+} */
+
+.upper img {
+    height: 3em;
+    width: 6em;
+}
+
+.upper li {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    padding: 0.5em;
+    margin: 0;
+    color: white;
+}
+
+
+.upper li a {
+    position: relative;
+    text-decoration: none;
+    text-emphasis: none;
+    color: white;
+    padding: 0 0;
+}
+
+
+
+/* ------------------------------ upper2 ------------------------------ */
+
+.upper2 {
+    display: none;
+}
+
+/* -------- Xαμπουργκερ μενου -------- */
+@media(max-width:1100px) {
+    .upper {
+        display: none;
+    }
+
+    .upper2 {
+        overflow-x: hidden;
+        display: block;
+        font-size: 1.3em;
+        text-transform: uppercase;
+        background-color: #0d6efd;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
+    .upper2-outer-div {
+        display: flex;
+        /* justify-content: space-between; */
+        justify-content: space-between;
+    }
+
+    .upper2-span {
+        display: none; 
+    }
+
+    .upper2-a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        font-size: 1.4em;
+    }
+
+    .upper2-a:hover {
+        color: #111;
+        transition: 0.3s;
+    }
+
+    .open-slide {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .upper2 .login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0.4em;
+        /* visibility: hidden; */
+    }
+
+    .upper2 .login p {
+        margin: 0;
+    }
+
+    .upper2 .login i {
+        font-size: 0.9em;
+        padding-right: 8px;
+    }
+
+    .upper2 .login-a {
+        display: flex;
+        align-items: baseline;
+        color: red;
+        text-decoration: none;
+    }
+
+    .upper2 .login a:hover {
+        color: white;
+        transition-delay: 0ms;
+        transition-duration: 300ms;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+
+    .side-nav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        opacity: 0.9;
+        overflow: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+    }
+
+    .side-nav a {
+        text-decoration: none;
+        color: #ccc;
+        display: block;
+        transition: 0.3s;
+        padding: 10px 10px 10px 30px;
+    }
+
+    .side-nav a:hover {
+        color: #0d6efd;
+    }
+
+    .button-close {
+        padding: 0;
+        margin: 0 auto;
+        position: absolute;
+        top: 0;
+        right: 10px;
+        font-size: 2em;
+    }
+
+
+    .button-close:hover {
+        color: rgb(215, 26, 26) !important;
+    }
+
+    .ipc-icon {
+        margin: 0.8em;
+        color: white;
+    }
+
+    .ipc-icon:hover {
+        color: #111;
+        border: 2px solid #111;
+        border-radius: 5px;
+    }
+}
+
+/* -------- Τελος του χαμπουργκερ μενου -------- */
+
+
+/* 1o animation, underline */
+
+.upper ul a:after {
+    content: "";
+    position: absolute;
+    background-color: red;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+.upper a:hover:after {
+    width: 100%;
+}
+
+/* 2o animation, box */
+
+/* .upper li:hover {
+    background-color: rgba(205, 24, 24, 0.79);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.upper li:hover a {
+    transition-delay: 0ms;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    color: white;
+} */
+
+/* ------------------------------ lower ------------------------------ */
+
+.lower {
+    /* margin-top: 10% !important; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: 0;
+    font-size: 1.2em;
+    color: white;
+    background-color: rgba(104, 16, 31, 0.8);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+@media(max-width:600px) {
+    .lower {
+        flex-direction: column;
+    }
+
+    .lower .column {
+        padding: 10px;
+    }
+}
+
+.lower a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.lower a:hover {
+    color: rgba(98, 214, 60, 0.993);
+    transition-delay: 0ms;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+.lower #addr a {
+    font-style: italic;
+}
+
+.lower #addr p:hover #map {
+    animation: rotation 1s 1 ease-in-out;
+}
+
+.lower #map {
+    width: 24px;
+    height: 24px;
+}
+
+.lower li {
+    padding: 5px;
+}
