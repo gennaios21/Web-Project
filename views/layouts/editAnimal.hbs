@@ -17,7 +17,7 @@
   <section class="edit">
     <h1 class="h1">Τροποποίηση ζώου</h1>
 
-    <form action="/admin_login/editAnimal/{{data.animalID}}" method="post">
+    <form action="/admin_login/editAnimal/{{data.animalID}}" method="post" enctype="multipart/form-data">
       <div class="form-horizontal main-form">
 
         <div class="form-group row form-div">
@@ -37,7 +37,7 @@
         {{!-- --}}
 
         <div class="form-group row form-div">
-          <label class="col-form-label col-sm-2" for="animalImg">Εικόνα (public/images/)</label>
+          <label class="col-form-label col-sm-2" for="animalImg">Εικόνα</label>
           <div class="col-sm-7">
             <input class="form-control" required type="file" accept="image/*" name="animalImg" value="{{data.animalImg}}" />
           </div>
