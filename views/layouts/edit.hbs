@@ -17,7 +17,7 @@
   <section class="edit">
     <h1 class="h1">Τροποποίηση ανακοίνωσης</h1>
 
-    <form action="/admin_login/edit/{{data.annID}}" method="post">
+    <form action="/admin_login/edit/{{data.annID}}" method="post" enctype="multipart/form-data">
       <div class="form-horizontal main-form">
 
         <div class="form-group row form-div">
@@ -29,7 +29,7 @@
         
 
         <div class="form-group row form-div">
-          <label class="col-form-label col-sm-2" for="img">Εικόνα (public/images/)</label>
+          <label class="col-form-label col-sm-2" for="img">Εικόνα</label>
           <div class="col-sm-7">
             <input class="form-control" type="file" accept="image/*" name="img" value="{{data.img}}" />
           </div>
