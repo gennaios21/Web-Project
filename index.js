@@ -28,6 +28,7 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage })
 
 import * as model from './model/model_sqlite.js';
+import { runInNewContext } from "vm";
 
 // setup της express και hbs
 
@@ -169,11 +170,30 @@ app.post("/admin_login/create", upload.single('img'), (req, res) => {
     const userID = req.session.userID;
     console.log(userID);
     let currentDate = new Date();
-    const newAnn = {
-        "title": req.body.title, "img": req.file.filename || defaultImg, "comment": req.body.comment, "user": req.session.userID,
+
+    //αν δε βάλει εικόνα ο αντμιν, να μπει η default
+    let x=(typeof req.file==='undefined');
+    let newAnn={};
+    if(x===true){
+        newAnn = {
+            "title": req.body.title, "img": defaultImg, "comment": req.body.comment, "user": req.session.userID,
+            "dateOfAnn": currentDate.getDate() + "-" + (currentDate.getMonth() + 1) + "-" + currentDate.getFullYear() + " " +
+                currentDate.getHours() + ":" + currentDate.getMinutes()
+        } 
+    }
+    else{
+        newAnn = {
+        "title": req.body.title, "img": req.file.filename, "comment": req.body.comment, "user": req.session.userID,
         "dateOfAnn": currentDate.getDate() + "-" + (currentDate.getMonth() + 1) + "-" + currentDate.getFullYear() + " " +
             currentDate.getHours() + ":" + currentDate.getMinutes()
-    }
+    } }
+    // else{
+    //     const newAnn = {
+    //         "title": req.body.title, "img": req.file.filename, "comment": req.body.comment, "user": req.session.userID,
+    //         "dateOfAnn": currentDate.getDate() + "-" + (currentDate.getMonth() + 1) + "-" + currentDate.getFullYear() + " " +
+    //             currentDate.getHours() + ":" + currentDate.getMinutes()
+    //     } 
+    // }
     model.newAnn(newAnn,
         (err, data) => {
             if (err)
@@ -203,12 +223,21 @@ app.get("/admin_login/edit/:annID", (req, res) => {
 app.post("/admin_login/edit/:id", upload.single('img'), (req, res) => {
     const id = req.params.id;
     let currentDate = new Date();
-    // const book = [req.body.title, req.body.author, req.body.comment, id];
-    const announcement = {
-        "title": req.body.title, "img": req.file.filename || defaultImg, "comment": req.body.comment, "annID": id, "user": req.session.userID,
+    let x=(typeof req.file==='undefined');
+    let announcement={};
+    if(x===true){
+        announcement = {
+            "title": req.body.title, "img": defaultImg, "comment": req.body.comment, "annID": id, "user": req.session.userID,
+            "dateOfAnn": currentDate.getDate() + "-" + (currentDate.getMonth() + 1) + "-" + currentDate.getFullYear() + " " +
+                currentDate.getHours() + ":" + currentDate.getMinutes()
+        } 
+    }
+    else{
+        announcement = {
+            "title": req.body.title, "img": req.file.filename, "comment": req.body.comment, "annID": id, "user": req.session.userID,
         "dateOfAnn": currentDate.getDate() + "-" + (currentDate.getMonth() + 1) + "-" + currentDate.getFullYear() + " " +
             currentDate.getHours() + ":" + currentDate.getMinutes()
-    }
+    } }
     model.updateAnn(announcement, (err, data) => {
         console.log('in POST', err, data)
         if (err) {
