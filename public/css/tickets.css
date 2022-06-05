@@ -1,0 +1,311 @@
+body {
+    --darkgrey: #282e34;
+    --lightblue: #0d6efd;
+    --orange: rgb(231, 129, 12);
+    --green: rgb(97, 210, 27);
+    background-image: url("../images/aquarium.jpg");
+}
+
+.tickets-page {
+    color: black !important;
+}
+
+/* form */
+
+/* .mid-tickets{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+} */
+
+form {
+    width: 80%;
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(40, 46, 52, 0.9);
+    font-size: 1.4em;
+    color: white;
+}
+
+.ticket-section {
+    width: 100%;
+    margin: 0 30px;
+}
+
+.datetime-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 30px;
+}
+
+.datetime-section li {
+    padding: 10px 0;
+}
+
+/* title */
+
+.tickets-title {
+    padding: 30px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 0.8em;
+}
+
+.date-title h2 {
+    margin: 0;
+}
+
+.date-title {
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7em;
+}
+
+/* options */
+
+select {
+    margin-left: 20px;
+    width: 20%;
+    border-radius: 20px;
+}
+
+span {
+    color: rgb(224, 82, 82);
+    margin-left: 10px;
+}
+
+.datetime-section ul #day {
+    color: green;
+}
+
+.datetime-section ul #sk {
+    color: red;
+}
+
+
+.labels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+    margin-bottom: 5%;
+}
+
+
+/* προγραμμα table */
+
+table {
+    margin: 0px 0 20px 0;
+}
+
+td {
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+td:nth-child(2n+1) {
+    padding-right: 60px;
+}
+
+tr #day {
+    color: green;
+
+}
+
+tr #sk {
+    color: rgb(224, 82, 82);
+
+}
+
+/* calendar */
+
+.main-calendar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 1.2em;
+}
+
+#calendar {
+    margin: 20px 0px;
+    border-radius: 15px;
+}
+
+/* ticket money */
+
+.money {
+    margin-top: 70px;
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.ticket-money {
+    color: rgb(55, 110, 238);
+}
+
+svg {
+    margin-right: 10px;
+}
+
+
+/* buy button */
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.buy-button {
+    margin: 20px;
+    padding: 15px;
+    border-radius: 20px;
+
+    background-color: rgb(97, 210, 27);
+    color: white;
+    font-size: 1.5em;
+    border: none;
+}
+
+.buy-button:hover {
+    color: white;
+    cursor: pointer;
+    background-color: rgb(61, 146, 8);
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ticket-calendar {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    gap: 50px;
+    width: 90%;
+}
+
+
+.owner-data {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.owner-data input {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.owner-data label {
+    padding-left: 5px;
+}
+
+
+
+/* media queries */
+
+@media(max-width:1100px) {
+    form {
+        width: 80%;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+    }
+
+    .ticket-section {
+        width: 90%;
+    }
+
+    .ticket-calendar {
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .datetime-section {
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+
+    .tickets-title {
+        font-size: 0.8em !important;
+    }
+
+    .labels {
+        flex-direction: column;
+        font-size: 0.8em;
+        justify-content: center;
+        align-items: center;
+    }
+
+    select {
+        margin-top: 10px;
+        width: 80%;
+        margin-left: 0 !important;
+    }
+
+    span {
+        color: rgb(218, 122, 122);
+        margin-left: 3px;
+    }
+
+    .main-calendar label {
+        font-size: 0.8em;
+
+    }
+
+    .main-calendar input {
+        /* font-size: 0.4em; */
+        line-height: 1.1;
+        margin: 0 15px;
+    }
+
+
+    .main-calendar svg {
+        height: 20px;
+        margin: 0 15px;
+    }
+
+    #calendar {
+        font-size: 0.8em;
+        margin-left: 0 !important;
+    }
+
+    .money p {
+        font-size: 0.8em;
+    }
+
+    .money svg {
+        height: 20px;
+    }
+
+    .button {
+        font-size: 0.8em;
+        margin: 0;
+    }
+
+    .owner-data input {
+        padding: 0;
+        font-size: 1em;
+    }
+
+    .owner-data input::placeholder {
+        padding: 5px 5px;
+        font-size: 0.8em;
+    }
+}

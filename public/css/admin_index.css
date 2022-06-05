@@ -1,0 +1,157 @@
+body {
+    background-image: url("/images/panta.jpg");
+    --darkgrey: #282e34;
+    --lightblue: #0d6efd;
+    --orange: rgb(231, 129, 12);
+    --green: rgb(97, 210, 27);
+}
+
+.logo2 {
+    padding: 0 50px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#current-page {
+    color: black;
+}
+
+.admin_h3 {
+    text-transform: uppercase;
+    color: white;
+    font-size: 2.4em;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.admin_login_div {
+    width: 100%;
+}
+
+
+.admin_index {
+    color: white;
+}
+
+.admin_input {
+    font-size: 1.1em;
+    padding: 10px;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.admin_submit {
+    min-width: 120px;
+    margin: 20px 0;
+    color: white;
+    background-color: var(--lightblue);
+    font-size: 1.2em;
+    padding: 10px;
+    width: 20%;
+    border: 2px solid var(--lightblue);
+    border-radius: 10px;
+}
+
+.admin_submit:hover {
+    background-color: #0b4bac;
+    border: 2px solid #0b4bac;
+}
+
+
+/* create, edit, delete */
+
+form {
+    padding: 20px 0;
+}
+
+.h1 {
+    padding-bottom: 20px;
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.create,
+.edit,
+.delete {
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    max-width: 80%;
+    margin: 50px auto;
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media(max-width:900px) {
+    .form-div {
+        margin: 0 auto;
+        width: 90%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .col-sm-7,
+    .col-sm-8,
+    .col-sm-10,
+    .col-sm-2 {
+        width: 80% !important;
+    }
+    .admin_h3{
+        font-size: 1.8em;
+    }
+    .col-6{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+    }
+        .col-6 form{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 80%;
+            margin: 0 20px;
+        }
+}
+
+.form-div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+label {
+    text-align: center;
+    color: white;
+    font-size: 1.5em !important;
+}
+
+.cancel {
+    color: white;
+    background-color: royalblue;
+}
+
+.cancel:hover {
+    background-color: rgb(45, 82, 192);
+}
+
+.col-sm-7,
+.col-sm-8,
+.col-sm-10,
+.col-sm-2 {
+    margin: 10px 0;
+    width: 40%;
+}
+
+.col-sm-7 input {
+    color: red;
+}

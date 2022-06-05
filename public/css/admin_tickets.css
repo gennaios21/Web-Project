@@ -1,0 +1,78 @@
+body {
+    background-image: url("/images/panta.jpg");
+    --darkgrey: #282e34;
+    --lightblue: #0d6efd;
+    --orange: rgb(231, 129, 12);
+    --green: rgb(97, 210, 27);
+}
+
+#current-page-4 {
+    color: black;
+}
+
+h2 {
+    padding: 40px 0 !important;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+table td,
+tr,
+th,
+h2,
+a {
+    color: white;
+}
+
+table th {
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.logo2 {
+    padding: 0 50px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.admin_tickets_page {
+    padding-bottom: 4%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.table,
+h2 {
+    padding: 10px 0;
+    max-width: 80%;
+    margin: 0px auto;
+}
+
+
+.table tr {
+    border: 2px solid white;
+}
+
+@media(max-width:950px){
+    tbody,
+        thead,
+        table a {
+            font-size: 0.65em !important;
+        }
+}
+
+@media(max-width:650px) {
+    h2 {
+        font-size: 1.6em;
+    }
+
+    tbody,
+    thead,
+    table a {
+        font-size: 0.38em !important;
+    }
+    table td{
+        padding: 5px 0 !important;
+    }
+}

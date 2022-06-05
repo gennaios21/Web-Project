@@ -1,0 +1,118 @@
+.contact-page {
+    color: black !important;
+}
+
+
+.upper .logo a {
+    display: flex;
+    align-items: center;
+}
+
+/* Για τη σελίδα Επικοινωνία, contact.html */
+.mid_contact {
+    margin-top: 8%;
+    margin-bottom: 8%;
+    padding-bottom: 20px;
+    background-color: rgba(16, 75, 104, 0.8);
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: space-evenly;
+}
+
+.mid_contact form {
+    width: 100%;
+}
+
+.mid_contact h2 {
+    padding-top: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    margin: 4vh 0;
+}
+
+@media(max-width:800px) {
+    .mid_contact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2em;
+        padding: 20px 40px;
+        margin: 100px 0;
+    }
+
+    .mid_contact .post {
+        padding-top: 10px !important;
+        margin-top: 10px !important;
+    }
+
+    .mid_contact input {
+        width: 100% !important;
+    }
+
+    .mid_contact #msg {
+        width: 100%;
+    }
+}
+
+
+.mid_contact #msg {
+    font-size: 1.2rem;
+    resize: none;
+    padding: 5px;
+    margin: 0;
+    margin-top: 5px;
+    border: none;
+}
+
+.mid_contact #mail {
+    margin-top: 5px;
+}
+
+.mid_contact .tel,
+.mid_contact .eml {
+    display: block;
+}
+
+.mid_contact svg {
+    padding-right: 8px;
+}
+
+/* .mid_contact #num {
+    border-left: 4px solid rgb(224, 119, 21);
+    margin-left: 3%;
+    padding-left: 3%;
+} */
+
+.mid_contact input {
+    font-size: 1em;
+    height: 6%;
+    width: 99%;
+    padding: 10px;
+    padding-right: 0;
+    padding-left: 1%;
+    border: none;
+}
+
+.mid_contact .submit {
+    font-size: 1em;
+    background-color: rgb(203, 135, 9);
+    color: white;
+    width: 200px;
+    height: 50px;
+    padding: 0;
+    margin: 2%;
+    margin-left: 0;
+    border-radius: 10px;
+    border: none;
+}
+
+.mid_contact .submit:hover {
+    background-color: rgb(90, 129, 23);
+    color: white;
+    transition-delay: 0ms;
+    transition-duration: 400ms;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+}
