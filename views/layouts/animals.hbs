@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Τα ζώα μας</title>
+
+    {{>links}}
+    <link rel="stylesheet" href="/css/animals.css">
+
+</head>
+
+<body>
+    {{>navbar}}
+    <!-- ζωα -->
+
+    <div class="mid_lower">
+
+        <article class="animals-article">
+
+            <!-- animals navbar -->
+            <section class="top-section">
+                <ul>
+                    <li>
+                        <a href="#thilastika">Θηλαστικά ξηράς</a>
+                    </li>
+                    <li>
+                        <a href="#ptina">Πτηνά</a>
+                    </li>
+                    <li>
+                        <a href="#erpeta" class="current">Ερπετά</a>
+                    </li>
+                    <li>
+                        <a href="#thalassia">Θαλάσσια</a>
+                    </li>
+                </ul>
+            </section>
+
+            <!--//////////////// animals section /////////////////-->
+            <div class="animal-title">
+                <p id="thilastika">Θηλαστικά ξηράς</p>
+            </div>
+
+            {{#each data}}
+            {{#ifEquals this.animalType 1 }}
+            <section class="section" id="ann-4">
+                <img src="images/{{this.animalImg}}" alt="{{this.animalImg}}">
+                <div class="div">
+                    <h2>
+                        {{this.animalName}}
+                    </h2>
+                    {{!-- <h5>Κατηγορία ζώου: {{this.animalType}}</h5> --}}
+                    <p>{{this.animalText}}</p>
+                </div>
+            </section>
+            {{/ifEquals}}
+            {{/each}}
+
+            {{!-- <section class="section" id="elephant">
+                <img src="images/elephant.jpg" alt="elephant">
+                <div class="div">
+                    <h2>Ελέφαντας</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident repellendus quasi neque ab
+                        necessitatibus quae modi.
+                        Consectetur magni nobis, sequi impedit, fuga repellendus ipsa deleniti, aliquid blanditiis
+                        mollitia
+                        ea quos
+                        reprehenderit laudantium nulla saepe facere omnis neque doloremque voluptatem! Nulla?</p>
+                </div>
+            </section> --}}
+
+
+            {{!-- <section class="section" id="elephant">
+                <div class="div">
+                    <h2>Καμηλοπάρδαλη</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident repellendus quasi neque ab
+                        necessitatibus quae modi.
+                        Consectetur magni nobis, sequi impedit, fuga repellendus ipsa deleniti, aliquid blanditiis
+                        mollitia
+                        ea quos
+                        reprehenderit laudantium nulla saepe facere omnis neque doloremque voluptatem! Nulla?</p>
+                </div>
+                <img src="images/giraffe.jpg" alt="giraffe">
+            </section> --}}
+
+            <div class="animal-title">
+                <p id="ptina">Πτηνά</p>
+            </div>
+            
+            {{#each data}}
+            {{#ifEquals this.animalType 2 }}
+            <section class="section" id="ann-4">
+                <img src="images/{{this.animalImg}}" alt="{{this.animalImg}}">
+                <div class="div">
+                    <h2>
+                        {{this.animalName}}
+                    </h2>
+                    {{!-- <h5>Κατηγορία ζώου: {{this.animalType}}</h5> --}}
+                    <p>{{this.animalText}}</p>
+                </div>
+            </section>
+            {{/ifEquals}}
+            {{/each}}
+           
+
+            {{!-- <section class="section" id="eagle">
+                <img src="images/eagle.jpg" alt="eagle">
+                <div class="div">
+                    <h2>Αετός</h2>
+                    <p> Consectetur magni nobis, sequi impedit, fuga repellendus ipsa deleniti, aliquid blanditiis
+                        mollitia
+                        ea quos
+                        reprehenderit laudantium nulla saepe facere omnis neque doloremque voluptatem! Nulla?</p>
+                </div>
+            </section> --}}
+
+
+            {{!-- <section class="section" id="flamingo">
+
+                <div class="div">
+                    <h2>Φλαμίνγκο</h2>
+                    <p> Consectetur magni nobis, sequi impedit, fuga repellendus ipsa deleniti, aliquid blanditiis
+                        mollitia
+                        ea quos
+                        reprehenderit laudantium nulla saepe facere omnis neque doloremque voluptatem! Nulla?</p>
+
+                </div>
+                <img src="images/flamingo.jpg" alt="flamingo">
+            </section> --}}
+
+            <div class="animal-title">
+                <p id="erpeta">Ερπετά</p>
+            </div>
+
+            {{#each data}}
+            {{#ifEquals this.animalType 3 }}
+            <section class="section" id="ann-4">
+                <img src="images/{{this.animalImg}}" alt="{{this.animalImg}}">
+                <div class="div">
+                    <h2>
+                        {{this.animalName}}
+                    </h2>
+                    {{!-- <h5>Κατηγορία ζώου: {{this.animalType}}</h5> --}}
+                    <p>{{this.animalText}}</p>
+                </div>
+            </section>
+            {{/ifEquals}}
+            {{/each}}
+            {{!-- <section class="section" id="crocodile">
+                <img src="images/crocodile.jpg" alt="crocodile">
+                <div class="div">
+                    <h2>Κροκόδειλος</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident repellendus quasi neque ab
+                        necessitatibus quae modi. Consectetur magni nobis, sequi impedit, fuga repellendus ipsa
+                        deleniti,
+                        aliquid blanditiis mollitia ea quos reprehenderit laudantium nulla saepe facere omnis neque
+                        doloremque voluptatem! Nulla?</p>
+
+                </div>
+
+            </section>
+
+            <section class="section" id="snake">
+
+                <div class="div">
+                    <h2>Φίδι</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident repellendus quasi neque ab
+                        necessitatibus quae modi. Consectetur magni nobis, sequi impedit, fuga repellendus ipsa
+                        deleniti,
+                        aliquid blanditiis mollitia ea quos reprehenderit laudantium nulla saepe facere omnis neque
+                        doloremque voluptatem! Nulla?</p>
+
+                </div>
+                <img src="images/snake.jpg" alt="snake">
+            </section> --}}
+
+            {{!-- <section class="section" id="turtle">
+                <img src="images/turtle.jpg" alt="turtle">
+                <div class="div">
+                    <h2>Χελώνα</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident repellendus quasi neque ab
+                        necessitatibus quae modi. Consectetur magni nobis, sequi impedit, fuga repellendus ipsa
+                        deleniti,
+                        aliquid blanditiis mollitia ea quos reprehenderit laudantium nulla saepe facere omnis neque
+                        doloremque voluptatem! Nulla?</p>
+
+                </div>
+            </section> --}}
+
+            <div class="animal-title">
+                <p id="thalassia">Θαλάσσια</p>
+            </div>
+
+            {{#each data}}
+            {{#ifEquals this.animalType 4 }}
+            <section class="section" id="ann-4">
+                <img src="images/{{this.animalImg}}" alt="{{this.animalImg}}">
+                <div class="div">
+                    <h2>
+                        {{this.animalName}}
+                    </h2>
+                    {{!-- <h5>Κατηγορία ζώου: {{this.animalType}}</h5> --}}
+                    <p>{{this.animalText}}</p>
+                </div>
+            </section>
+            {{/ifEquals}}
+            {{/each}}
+
+            {{!-- <section class="section" id="dolphin">
+
+                <div class="div">
+                    <h2>Δελφίνια</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident repellendus quasi neque ab
+                        necessitatibus quae modi. Consectetur magni nobis, sequi impedit, fuga repellendus ipsa
+                        deleniti,
+                        aliquid blanditiis mollitia ea quos reprehenderit laudantium nulla saepe facere omnis neque
+                        doloremque voluptatem! Nulla?</p>
+
+                </div>
+                <img src="images/dolphin.jpg" alt="dolphin">
+            </section>
+
+            <section class="section" id="seal">
+                <img src="images/seal.jpg" alt="seal">
+                <div class="div">
+                    <h2>Φώκια</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident repellendus quasi neque ab
+                        necessitatibus quae modi. Consectetur magni nobis, sequi impedit, fuga repellendus ipsa
+                        deleniti,
+                        aliquid blanditiis mollitia ea quos reprehenderit laudantium nulla saepe facere omnis neque
+                        doloremque voluptatem! Nulla?</p>
+
+                </div>
+            </section> --}}
+            {{!-- τελος ζωων --}}
+
+        </article>
+        {{>footer}}
+        <script src="js/animals.js"></script>
+</body>
+
+</html>

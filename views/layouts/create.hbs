@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Προσθήκη ανακοίνωσης</title>
+  {{>links}}
+  <link rel="stylesheet" href="/css/admin_index.css">
+
+</head>
+
+<body>
+  {{>admin_login_navbar}}
+  <section class="create">
+    <h1 class="h1">Προσθήκη νέας ανακοίνωσης</h1>
+
+    <form action="/admin_login/create" method="post">
+      <div class="form-horizontal main-form">
+
+        <div class="form-group row form-div">
+          <label class="col-form-label col-sm-2" for="title">Τίτλος</label>
+          <div class="col-sm-8">
+            <input autofocus class="form-control" required name="title" value="{{data.title}}" />
+          </div>
+        </div>
+
+        <div class="form-group row form-div">
+          <label class="col-form-label col-sm-2" for="img">Εικόνα (public/images/)</label>
+          <div class="col-sm-7">
+            <input class="form-control" type="file" accept="image/*" name="img" value="{{data.img}}" />
+          </div>
+        </div>
+
+        <div class="form-group row form-div">
+          <label class="col-form-label col-sm-2" for="comment">Κείμενο</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" cols="20" required name="comment" maxlength="32000"
+              rows="7">{{data.comments}}</textarea>
+          </div>
+        </div>
+
+        <div class="form-group row form-div">
+          <label class="col-form-label col-sm-2"></label>
+          <div class="col-sm-10">
+            <input type="submit" value="Προσθήκη" class="btn btn-default btn-success" />
+            <a class="btn btn-outline-dark cancel" href="/admin_login/admin_anns">Ακύρωση</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+</body>
+
+  <script>
+    document.querySelector("textarea").defaultValue = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident repellendus quasi neque ab necessitatibus quae modi. Consectetur magni nobis, sequi impedit, fuga repellendus ipsa deleniti, aliquid blanditiis mollitia ea quos reprehenderit laudantium nulla saepe facere omnis neque doloremque voluptatem!";
+  </script>
+
+</html>

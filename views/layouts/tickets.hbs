@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Εισιτήρια</title>
+
+    {{>links}}
+    <link rel="stylesheet" href="/css/tickets.css">
+</head>
+
+<body>
+
+    {{>navbar}}
+    <!-- εισιτηρια -->
+    <div class="mid-tickets">
+
+        <form action="/tickets_buy" method="POST" class="ticket-form">
+            <section class="ticket-calendar">
+                <section class="ticket-section">
+
+                    <div class="tickets-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                            class="bi bi-ticket-perforated" viewBox="0 0 16 16">
+                            <path
+                                d="M4 4.85v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Z" />
+                            <path
+                                d="M1.5 3A1.5 1.5 0 0 0 0 4.5V6a.5.5 0 0 0 .5.5 1.5 1.5 0 1 1 0 3 .5.5 0 0 0-.5.5v1.5A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5V10a.5.5 0 0 0-.5-.5 1.5 1.5 0 0 1 0-3A.5.5 0 0 0 16 6V4.5A1.5 1.5 0 0 0 14.5 3h-13ZM1 4.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v1.05a2.5 2.5 0 0 0 0 4.9v1.05a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-1.05a2.5 2.5 0 0 0 0-4.9V4.5Z" />
+                        </svg>
+                        <h2>Εισιτήρια</h2>
+                    </div>
+
+                    <div class="labels">
+                        <label for="adults" id="adults">Εισιτήρια ενηλίκων (12+ ετών): <span>10€</span></label>
+                        <select value="adults" name="adults" id="select-adults"></select>
+                    </div>
+
+                    <div class="labels">
+                        <label for="children">Εισιτήρια παιδιών (0-12 ετών): <span>5€</span></label>
+                        <select value="children" name="children" id="select-children">
+                        </select>
+                    </div>
+
+                    <div class="labels">
+                        <label for="students">Εισιτήρια για φοιτητές: <span>7€</span></label>
+                        <select value="students" name="students" id="select-students">
+                        </select>
+                    </div>
+
+                    <div class="labels">
+                        <label for="manychildren">Εισιτήρια για άνεργους: <span>4€</span></label>
+                        <select value="manychildren" name="manychildren" id="select-manychildren">
+                        </select>
+                    </div>
+
+                    <div class="labels">
+                        <label for="amea">Εισιτήρια για άτομα με ειδικές ανάγκες: <span>1€</span></label>
+                        <select value="amea" name="amea" id="select-amea">
+                        </select>
+                    </div>
+
+                    <div class="money">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-cart3" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                        </svg>
+                        <p>Συνολική τιμή: <span class="ticket-money">0€</span></p>
+                    </div>
+
+                </section>
+
+
+                <section class="datetime-section">
+                    <div>
+                        <div class="date-title"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z" />
+                                <path
+                                    d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                            </svg>
+                            <!-- <h2>Ωράριο λειτουργίας</h2> -->
+                            <h2>Ωράριο</h2>
+                        </div>
+                        <!-- <ul>
+                            <li>Δευτέρα: <span id="day" day>3πμ-9μμ</span></li>
+                            <li>Τρίτη: <span id="day">9πμ-9μμ</span></li>
+                            <li>Τετάρτη: <span id="sk"> Κλειστά</span></li>
+                            <li>Πέμπτη: <span id="day">9πμ-9μμ</span></li>
+                            <li>Παρασκευή: <span id="day">9πμ-9μμ</span></li>
+                            <li>Σάββατο: <span id="day">9πμ-9μμ</span></li>
+                            <li>Κυριακή: <span id="sk">Κλειστά</span></li>
+                        </ul> -->
+                        <table>
+                            <tr>
+                                <td>Δευτέρα</td>
+                                <td id="day">9πμ-9μμ</td>
+                            </tr>
+                            <tr>
+                                <td>Τρίτη</td>
+                                <td id="day">9πμ-9μμ</td>
+                            </tr>
+                            <tr>
+                                <td>Τετάρτη</td>
+                                {{!-- <td id="sk">Κλειστά</td> --}}
+                                <td id="day">9πμ-9μμ</td>
+                            </tr>
+                            <tr>
+                                <td>Πέμπτη</td>
+                                <td id="day">9πμ-9μμ</td>
+                            </tr>
+                            <tr>
+                                <td>Παρασκευή</td>
+                                <td id="day">9πμ-9μμ</td>
+                            </tr>
+                            <tr>
+                                <td>Σάββατο</td>
+                                <td id="day">9πμ-9μμ</td>
+                            </tr>
+                            <tr>
+                                <td>Κυριακή</td>
+                                {{!-- <td id="sk">Κλειστά</td> --}}
+                                <td id="day">9πμ-9μμ</td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <div class="main-calendar">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="bi bi-calendar-day" viewBox="0 0 16 16">
+                                <path
+                                    d="M4.684 11.523v-2.3h2.261v-.61H4.684V6.801h2.464v-.61H4v5.332h.684zm3.296 0h.676V8.98c0-.554.227-1.007.953-1.007.125 0 .258.004.329.015v-.613a1.806 1.806 0 0 0-.254-.02c-.582 0-.891.32-1.012.567h-.02v-.504H7.98v4.105zm2.805-5.093c0 .238.192.425.43.425a.428.428 0 1 0 0-.855.426.426 0 0 0-.43.43zm.094 5.093h.672V7.418h-.672v4.105z" />
+                                <path
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                            </svg>
+                            <label for="calendar">Ημέρα Επίσκεψης</label>
+                        </div>
+                        <input type="date" name="calendar" id="calendar" required>
+                    </div>
+                </section>
+            </section>
+
+            <section class="owner-data">
+                <label for="fisrtName">Όνομα</label><br>
+                <input type="text" name="firstName" placeholder="Πληκτρολογήστε το όνομά σας" required><br>
+
+                <label for="lastName">Επώνυμο</label><br>
+                <input type="text" name="lastName" placeholder="Πληκτρολογήστε το επώνυμό σας" required><br>
+
+                <label for="email">E-mail</label><br>
+                <input type="email" name="email" placeholder="Πληκτρολογήστε το e-mail σας" required><br>
+
+            </section>
+
+
+            <div class="button">
+                <input type="submit" value="Αγορά εισιτηρίων" class="buy-button">
+            </div>
+
+        </form>
+
+
+
+    </div>
+    {{>footer}}
+    <script src="js/tickets.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+
+</html>

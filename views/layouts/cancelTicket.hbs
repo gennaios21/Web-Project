@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{>links}}
+    <link rel="stylesheet" href="/css/admin_index.css">
+
+    <title>Ακύρωση εισιτηρίου</title>
+</head>
+
+<body>
+    {{>admin_login_navbar}}
+    <section class="delete">
+        <h1 class="h1">Ακύρωση εισιτηρίου</h1>
+
+        <form action="/admin_login/cancelTicket/{{data.ticketID}}" method="POST">
+            <div class="form-horizontal main-form">
+
+                <div class="form-group row form-div">
+                    <label class="col-form-label col-sm-2" for="Title">Όνομα κατόχου</label>
+                    <div class="col-sm-8">
+                        <input readonly class="form-control" id="Title" value="{{data.ownerName}}" />
+                    </div>
+                </div>
+
+                <div class="form-group row form-div">
+                    <label class="col-form-label col-sm-2" for="Title">Επώνυμο κατόχου</label>
+                    <div class="col-sm-8">
+                        <input readonly class="form-control" id="Title" value="{{data.ownerSurname}}" />
+                    </div>
+                </div>
+                <div class="form-group row form-div">
+                    <label class="col-form-label col-sm-2" for="Title">Mail κατόχου</label>
+                    <div class="col-sm-8">
+                        <input readonly class="form-control" id="Title" value="{{data.ownerMail}}" />
+                    </div>
+                </div>
+
+
+                {{!-- Κατηγορια ζωου --}}
+                <div class="form-group row form-div">
+                    <label class="col-form-label col-sm-2" for="ticketType">Κατηγορία</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" name="ticketType" type="number" min="1" max="5"
+                            placeholder="1: Ενηλίκων | 2: Παιδιών | 3: Φοιτητικό | 4: Ανέργων | 5: ΑΜΕΑ"
+                            value="{{data.typeOfTicket}}" />
+                    </div>
+                </div>
+                {{!-- --}}
+
+                
+
+                <div class="form-group row form-div">
+                    <label class="col-form-label col-sm-2"></label>
+                    <div class="col-sm-10">
+                        <input type="submit" value="Διαγραφή" class="btn btn-default btn-danger" />
+                        <a class="btn btn-outline-dark cancel" href="/admin_login/admin_tickets">Ακύρωση</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>

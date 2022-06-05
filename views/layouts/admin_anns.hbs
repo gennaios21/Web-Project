@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Διαχείριση Ανακοινώσεων</title>
+  {{>links}}
+  <link rel="stylesheet" href="/css/admin_ann.css">
+  {{!--
+  <link rel="stylesheet" href="/css/admin_index.css"> --}}
+</head>
+
+<body>
+  {{>admin_login_navbar}}
+  <section class="admin_anns_page">
+    <h2>Ανακοινώσεις - {{user}} ({{data.length}})</h2>
+
+    <div class="table-responsive-sm">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Τίτλος</th>
+            <th>Εικόνα</th>
+            <th>Κείμενο</th>
+            <th>Ημερομηνία</th>
+            <th class="d-print-none">
+              <a class="btn btn-sm btn-success" href="/admin_login/create">Προσθήκη</a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each data}}
+          <tr>
+            <td>{{this.title}}</td>
+            <td>{{this.img}}</td>
+            <td>{{this.comment}}</td>
+            <td>{{this.dateOfAnn}}</td>
+            <td class="d-print-none">
+              <a class="btn btn-sm btn-warning" href="/admin_login/edit/{{this.annID}}">Επεξεργασία</a>
+              <a class="btn btn-sm btn-danger" href="/admin_login/delete/{{this.annID}}">Διαγραφή</a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {{>links}}
+  <link rel="stylesheet" href="/css/admin_index.css">
+
+  <title>Διαγραφή ζώου</title>
+</head>
+
+<body>
+  {{>admin_login_navbar}}
+  <section class="delete">
+    <h1 class="h1">Διαγραφή ζώου</h1>
+
+    <form action="/admin_login/deleteAnimal/{{data.animalID}}" method="POST">
+      <div class="form-horizontal main-form">
+
+        <div class="form-group row form-div">
+          <label class="col-form-label col-sm-2" for="Title">Όνομα</label>
+          <div class="col-sm-8">
+            <input readonly class="form-control" id="Title" value="{{data.animalName}}" />
+          </div>
+        </div>
+
+        {{!-- Κατηγορια ζωου --}}
+        <div class="form-group row form-div">
+          <label class="col-form-label col-sm-2" for="animalType">Κατηγορία</label>
+          <div class="col-sm-8">
+            <input class="form-control" name="animalType" type="number" min="1" max="4"
+              placeholder="1: Θηλαστικό ξηράς | 2: Πτηνό | 3: Ερπετό | 4: Θαλάσσιο" value="{{data.animalType}}" />
+          </div>
+        </div>
+        {{!-- --}}
+
+        <div class="form-group row form-div">
+          <label class="col-form-label col-sm-2" for="img">Εικόνα</label>
+          <div class="col-sm-7">
+            <input readonly class="form-control" type="file" id="img" value="{{data.animalImg}}" />
+          </div>
+        </div>
+
+        <div class="form-group row form-div">
+          <label class="col-form-label col-sm-2" for="Commentaires">Περιγραφή</label>
+          <div class="col-sm-10">
+            <textarea readonly class="form-control" cols="20" id="Commentaires" maxlength="32000"
+              rows="7">{{data.animalText}}</textarea>
+          </div>
+        </div>
+
+        <div class="form-group row form-div">
+          <label class="col-form-label col-sm-2"></label>
+          <div class="col-sm-10">
+            <input type="submit" value="Διαγραφή" class="btn btn-default btn-danger" />
+            <a class="btn btn-outline-dark cancel" href="/admin_login/admin_animals">Ακύρωση</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+</body>
+
+</html>

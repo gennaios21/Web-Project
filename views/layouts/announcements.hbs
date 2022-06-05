@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ανακοινώσεις</title>
+
+    {{>links}}
+    <link rel="stylesheet" href="/css/announcements.css">
+
+</head>
+
+<body>
+    {{>navbar}}
+    <!-- ανακοινωσεις -->
+
+    <article class="announcements">
+        <h2>Ανακοινώσεις</h2>
+        <section class="mid-announcements">
+
+            {{!-- <div class="ann" id="ann-1">
+                {{#if data.0.author}}
+                <img src="images/{{data.0.author}}" alt="{{data.0.author}}">
+                <div class="text-content">
+                    <h4>
+                        {{data.0.title}}
+                    </h4>
+                    <p>{{data.0.comment}}</p>
+                </div>
+                {{/if}}
+            </div>
+            <div class="ann" id="ann-2">
+                {{#if data.1.author}}
+                <img src="images/{{data.1.author}}" alt="{{data.1.author}}">
+                <div class="text-content">
+                    <h4>
+                        {{data.1.title}}
+                    </h4>
+                    <p>{{data.1.comment}}</p>
+                </div>
+                {{/if}}
+            </div>
+            <div class="ann" id="ann-3">
+                {{#if data.2.author}}
+                <img src="images/{{data.2.author}}" alt="{{data.2.author}}">
+                <div class="text-content">
+                    <h4>
+                        {{data.2.title}}
+                    </h4>
+                    <p>{{data.2.comment}}</p>
+                </div>
+                {{/if}}
+            </div> --}}
+
+            {{!-- λιστα ανακοινωσεων απο βαση δεδ --}}
+            {{#each data}}
+            <div class="ann" id="ann-4">
+                <img src="images/{{this.img}}" alt="{{this.img}}">
+                <div class="text-content">
+                    <h4>
+                        {{this.title}}
+                    </h4>
+                    <h5>{{this.dateOfAnn}}</h5>
+                    <p>{{this.comment}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </section>
+
+    </article>
+    {{>footer}}
+    <script src="js/announcements.js"></script>
+</body>
+
+</html>

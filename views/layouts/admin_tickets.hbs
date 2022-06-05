@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Διαχείριση Εισιτηρίων</title>
+    {{>links}}
+    <link rel="stylesheet" href="/css/admin_tickets.css">
+    {{!--
+    <link rel="stylesheet" href="/css/admin_index.css"> --}}
+</head>
+
+<body>
+    {{>admin_login_navbar}}
+    <section class="admin_tickets_page">
+        <h2>Εισιτήρια - admin ({{data.length}})</h2>
+
+        <div class="table-responsive-sm">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Όνομα κατόχου</th>
+                        <th>Επώνυμο κατόχου</th>
+                        <th>Email κατόχου</th>
+                        <th>Ticket ID</th>
+                        <th>Τύπος Εισιτηρίου</th>
+                        <th>Ημερομηνία Επίσκεψης</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each data}}
+                    <tr>
+                        <td>{{this.ownerName}}</td>
+                        <td>{{this.ownerSurname}}</td>
+                        <td>{{this.ownerMail}}</td>
+                        <td>{{this.ticketID}}</td>
+                        <td>{{#ifEquals this.typeOfTicket 1}}Τύπος 1 - Ενηλίκων{{/ifEquals}}
+                            {{#ifEquals this.typeOfTicket 2}}Τύπος 2 - Παιδικό{{/ifEquals}}
+                            {{#ifEquals this.typeOfTicket 3}}Τύπος 3 - Φοιτητικό{{/ifEquals}}
+                            {{#ifEquals this.typeOfTicket 4}}Τύπος 4 - Ανέργων{{/ifEquals}}
+                            {{#ifEquals this.typeOfTicket 5}}Τύπος 5 - ΑΜΕΑ{{/ifEquals}}</td>
+                        <td>{{this.dateOfVisit}}</td>
+                        <td class="d-print-none">
+                            <a class="btn btn-sm btn-danger" href="/admin_login/cancelTicket/{{this.ticketID}}">Ακύρωση</a>
+
+                        </td>
+
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+
+</html>

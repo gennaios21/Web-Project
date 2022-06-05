@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {{>links}}
+  <link rel="stylesheet" href="/css/admin_index.css">
+
+  <title>Διαγραφή ανακοίνωση</title>
+</head>
+
+<body>
+  {{>admin_login_navbar}}
+  <section class="delete">
+    <h1 class="h1">Διαγραφή ανακοίνωσης</h1>
+
+    <form action="/admin_login/delete/{{data.annID}}" method="POST">
+      <div class="form-horizontal main-form">
+
+        <div class="form-group row form-div">
+          <label class="col-form-label col-sm-2" for="Title">Τίτλος</label>
+          <div class="col-sm-8">
+            <input readonly class="form-control" id="Title" value="{{data.title}}" />
+          </div>
+        </div>
+
+        <div class="form-group row form-div">
+          <label class="col-form-label col-sm-2" for="img">Εικόνα</label>
+          <div class="col-sm-7">
+            <input readonly class="form-control" type="file" id="img" value="{{data.img}}" />
+          </div>
+        </div>
+
+        <div class="form-group row form-div">
+          <label class="col-form-label col-sm-2" for="Commentaires">Κείμενο</label>
+          <div class="col-sm-10">
+            <textarea readonly class="form-control" cols="20" id="Commentaires" maxlength="32000"
+              rows="7">{{data.comment}}</textarea>
+          </div>
+        </div>
+
+        <div class="form-group row form-div">
+          <label class="col-form-label col-sm-2"></label>
+          <div class="col-sm-10">
+            <input type="submit" value="Διαγραφή" class="btn btn-default btn-danger" />
+            <a class="btn btn-outline-dark cancel" href="/admin_login/admin_anns">Ακύρωση</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+</body>
+
+</html>

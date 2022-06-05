@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Διαχείριση Ζώων</title>
+    {{>links}}
+    <link rel="stylesheet" href="/css/admin_animals.css">
+    {{!--
+    <link rel="stylesheet" href="/css/admin_index.css"> --}}
+</head>
+
+<body>
+    {{>admin_login_navbar}}
+    <section class="admin_animals_page">
+        <h2>Ζώα - {{animalUser}} ({{data.length}})</h2>
+
+        <div class="table-responsive-sm">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Όνομα</th>
+                        <th>Εικόνα</th>
+                        <th>Περιγραφή</th>
+                        <th>Ημερομηνία</th>
+                        <th>Κατηγορία</th>
+                        <th class="d-print-none">
+                            <a class="btn btn-sm btn-success" href="/admin_login/createAnimal">Προσθήκη</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each data}}
+                    <tr>
+                        <td>{{this.animalName}}</td>
+                        <td>{{this.animalImg}}</td>
+                        <td>{{this.animalText}}</td>
+                        <td>{{this.animalDate}}</td>
+                        <td>{{#ifEquals this.animalType 1}}1 - Θηλαστικό ξηρας{{/ifEquals}}
+                            {{#ifEquals this.animalType 2}}2 - Πτηνό{{/ifEquals}}
+                            {{#ifEquals this.animalType 3}}3 - Ερπετό{{/ifEquals}}
+                            {{#ifEquals this.animalType 4}}4 - Θαλάσσιο{{/ifEquals}}
+                        </td>
+                        <td class="d-print-none">
+                            <a class="btn btn-sm btn-warning" href="/admin_login/editAnimal/{{this.animalID}}">Επεξεργασία</a>
+                            <a class="btn btn-sm btn-danger" href="/admin_login/deleteAnimal/{{this.animalID}}">Διαγραφή</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+
+</html>
