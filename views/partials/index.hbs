@@ -1,0 +1,22 @@
+
+<div class="admin_index">
+    <div class="col-6 offset-3">
+        <form action="/admin_login" method="post">
+            <h3 class="admin_h3">Στοιχεία διαχειριστή</h3>
+            <div class="form-group">
+                <div>
+                    <input type="password" class="admin_input" name="userName" placeholder="Κωδικός διαχειριστή" required="required"
+                        value="{{user}}">
+                </div>
+            </div>
+            {{#if message}}
+            <div class="alert alert-primary" role="alert">
+                {{message}}
+            </div>
+            {{/if}}
+            <div class="form-group">
+                <button type="submit" class="admin_submit">Υποβολή</button>
+            </div>
+        </form>
+    </div>
+</div>
